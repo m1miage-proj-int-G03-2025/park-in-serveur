@@ -94,7 +94,7 @@ public class ParkingEntity {
     @Column(name = "nombre_places_2_roues_motrices")
     private int nombrePlaces2RouesMotrices;
 
-    @Column(name = "nombre_places_pr")
+    @Column(name = "nombre_places_covoiturage")
     private int nombrePlacesCovoiturage;
 
     @ManyToOne

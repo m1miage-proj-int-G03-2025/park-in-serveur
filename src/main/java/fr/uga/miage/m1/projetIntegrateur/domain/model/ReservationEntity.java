@@ -15,7 +15,7 @@ public class ReservationEntity {
     @Column(name = "id_reservation")
     private Long id;
 
-    @Column(name = "date")
+    @Column(name = "date_reservation")
     private LocalDate dateReservation;
 
     @Column(name = "heure_debut")

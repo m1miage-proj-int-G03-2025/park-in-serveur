@@ -27,4 +27,8 @@ public class VilleEntity {
 
     @OneToMany(mappedBy = "ville")
     private List<ParkingEntity> parkings;
+
+    @ManyToOne
+    @JoinColumn(name = "departement")
+    private DepartementEntity departement;
 }
