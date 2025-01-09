@@ -28,9 +28,6 @@ public class ParkingEntity {
     @Column(name = "hauteur_max")
     private Long hauteurMax;
 
-    @Column(name = "numero_siret")
-    private String numeroSiret;
-
     @Column(name = "x_longitude")
     private double xLongitude;
 
@@ -39,12 +36,6 @@ public class ParkingEntity {
 
     @Column(name = "id_local",length = 50)
     private String idLocal;
-
-    @Column(name = "type_ouvrage",length = 50)
-    private String typeOuvrage;
-
-    @Column(name = "type_usager",length = 50)
-    private String typeUsager;
 
     @Column(name = "tarif_pmr")
     private Long tarifPmr;
@@ -64,10 +55,10 @@ public class ParkingEntity {
     @Column(name = "tarif_24h")
     private Long tarif24h;
 
-    @Column(name = "abo_resident")
+    @Column(name = "tarif_abo_resident")
     private Long aboResident;
 
-    @Column(name = "abo_non_resident")
+    @Column(name = "tarif_abo_non_resident")
     private Long aboNonResident;
 
     @Column(name = "nombre_places")
@@ -94,11 +85,11 @@ public class ParkingEntity {
     @Column(name = "nombre_places_2_roues_motrices")
     private int nombrePlaces2RouesMotrices;
 
-    @Column(name = "nombre_places_pr")
+    @Column(name = "nombre_places_covoiturage")
     private int nombrePlacesCovoiturage;
 
     @ManyToOne
-    @JoinColumn(name = "inseeVille")
+    @JoinColumn(name = "insee_ville")
     private VilleEntity ville;
 
     @OneToMany(mappedBy = "parking")

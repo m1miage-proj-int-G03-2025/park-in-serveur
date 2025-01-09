@@ -22,9 +22,13 @@ public class VilleEntity {
     @Column(name = "x_longitude")
     private double xLongitude;
 
-    @Column(name = "y_latitude")
+    @Column(name = "")
     private double yLatitude;
 
     @OneToMany(mappedBy = "ville")
     private List<ParkingEntity> parkings;
+
+    @ManyToOne
+    @JoinColumn(name = "departement")
+    private DepartementEntity departement;
 }
