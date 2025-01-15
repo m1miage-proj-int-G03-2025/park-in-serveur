@@ -13,19 +13,21 @@ public class VilleEntity {
     @Column(name = "insee_ville")
     private int inseeVille;
 
+    @Column(name = "code_postal")
+    private int codePostal;
+
     @Column(name = "nom",length = 50)
     private String nom;
 
-    @Column(name = "code_postal")
-    private int codePostal;
+    @Column(name = "y_latitude")
+    private double yLatitude;
 
     @Column(name = "x_longitude")
     private double xLongitude;
 
-    @Column(name = "")
-    private double yLatitude;
+    @Column(name = "nom_departement")
+    private String nomDepartement;
 
     @OneToMany(mappedBy = "ville")
     private List<ParkingEntity> parkings;
-
 }

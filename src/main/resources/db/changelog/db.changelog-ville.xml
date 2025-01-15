@@ -15,14 +15,15 @@
             <column name="insee_ville" type="NUMBER">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="nom" type="VARCHAR2(50)">
-                <constraints nullable="false"/>
-            </column>
             <column name="code_postal" type="NUMBER">
                 <constraints nullable="false"/>
             </column>
-            <column name="x_longitude" type="DOUBLE PRECISION"/>
+            <column name="nom" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
             <column name="y_latitude" type="DOUBLE PRECISION"/>
+            <column name="x_longitude" type="DOUBLE PRECISION"/>
+            <column name="nom_departement" type="VARCHAR2(50)"/>
         </createTable>
     </changeSet>
 
