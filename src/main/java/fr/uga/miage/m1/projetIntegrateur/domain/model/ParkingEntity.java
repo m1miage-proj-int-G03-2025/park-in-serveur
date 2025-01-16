@@ -13,9 +13,6 @@ public class ParkingEntity {
     @Column(name = "id_parking",length = 50)
     private String idParking;
 
-    @Column(name = "nom",length = 50)
-    private String nom;
-
     @Column(name = "adresse",length = 50)
     private String adresse;
 
@@ -30,6 +27,9 @@ public class ParkingEntity {
 
     @Column(name = "nombre_places_pr")
     private int nombrePlacesPR;
+
+    @Column(name = "hauteur_max")
+    private double hauteurMax;
 
     @Column(name = "nombre_places_pmr")
     private int nombrePlacesPMR;
@@ -56,19 +56,19 @@ public class ParkingEntity {
     private double tarifPmr;
 
     @Column(name = "tarif_1h")
-    private Long tarif1h;
+    private double tarif1h;
 
     @Column(name = "tarif_2h")
-    private Long tarif2h;
+    private double tarif2h;
 
     @Column(name = "tarif_3h")
-    private Long tarif3h;
+    private double tarif3h;
 
     @Column(name = "tarif_4h")
-    private Long tarif4h;
+    private double tarif4h;
 
     @Column(name = "tarif_24h")
-    private Long tarif24h;
+    private double tarif24h;
 
     @Column(name = "tarif_abo_resident")
     private Long aboResident;
