@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="2" author="dev">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="place"/>
+            </not>
+        </preConditions>
+        <createTable tableName="place">
+            <column name="numero_place" type="VARCHAR2(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="est_occupee" type="BOOLEAN"/>
+            <column name="id_parking" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="place" baseColumnNames="id_parking"
+                referencedTableName="parking" referencedColumnNames="id_parking"
+                constraintName="fk_place_parking"/>
+    </changeSet>
+
+</databaseChangeLog>

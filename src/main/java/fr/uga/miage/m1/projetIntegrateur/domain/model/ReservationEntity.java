@@ -14,25 +14,18 @@ public class ReservationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reservation")
     private Long id;
-
-    @Column(name = "date")
+    @Column(name = "date_reservation")
     private LocalDate dateReservation;
-
     @Column(name = "heure_debut")
     private LocalTime heureDebut;
-
     @Column(name = "duree_en_heure")
     private Integer dureeEnHeure;
-
     @Column(name = "statut")
     private String statut;
-
     @ManyToOne
-    @JoinColumn(name = "numeroPlace")
+    @JoinColumn(name = "numero_place")
     private PlaceEntity place;
-
     @ManyToOne
-    @JoinColumn(name = "idConducteur")
+    @JoinColumn(name = "id_conducteur")
     private UtilisateurEntity utilisateur;
-
 }

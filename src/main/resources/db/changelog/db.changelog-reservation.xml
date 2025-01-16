@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="4" author="dev">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="reservation"/>
+            </not>
+        </preConditions>
+        <createTable tableName="reservation">
+            <column name="id_reservation" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="date_reservation" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="heure_debut" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="duree_en_heure" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="statut" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="numero_place" type="VARCHAR2(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_conducteur" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="reservation" baseColumnNames="numero_place"
+                referencedTableName="place" referencedColumnNames="numero_place"
+                constraintName="fk_reservation_place"/>
+
+        <addForeignKeyConstraint
+                baseTableName="reservation" baseColumnNames="id_conducteur"
+                referencedTableName="utilisateur" referencedColumnNames="id_utilisateur"
+                constraintName="fk_reservation_utilisateur"/>
+    </changeSet>
+
+</databaseChangeLog>
