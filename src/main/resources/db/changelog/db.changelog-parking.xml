@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="1" author="dev">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="parking"/>
+            </not>
+        </preConditions>
+        <createTable tableName="parking">
+            <column name="id_parking" type="VARCHAR2(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="adresse" type="VARCHAR2(50)"/>
+            <column name="url_site_web" type="VARCHAR2(50)"/>
+            <column name="est_gratuit" type="BOOLEAN"/>
+            <column name="hauteur_max" type="NUMBER"/>
+            <column name="x_longitude" type="DOUBLE PRECISION"/>
+            <column name="y_latitude" type="DOUBLE PRECISION"/>
+            <column name="tarif_pmr" type="NUMBER"/>
+            <column name="tarif_1h" type="NUMBER"/>
+            <column name="tarif_2h" type="NUMBER"/>
+            <column name="tarif_3h" type="NUMBER"/>
+            <column name="tarif_4h" type="NUMBER"/>
+            <column name="tarif_24h" type="NUMBER"/>
+            <column name="tarif_abo_resident" type="NUMBER"/>
+            <column name="tarif_abo_non_resident" type="NUMBER"/>
+            <column name="nombre_places" type="NUMBER"/>
+            <column name="nombre_places_pr" type="NUMBER"/>
+            <column name="nombre_places_pmr" type="NUMBER"/>
+            <column name="nombre_places_voitures_electriques" type="NUMBER"/>
+            <column name="nombre_places_velo" type="NUMBER"/>
+            <column name="nombre_places_2r_el" type="NUMBER"/>
+            <column name="nombre_places_auto_partage" type="NUMBER"/>
+            <column name="nombre_places_2_roues_motrices" type="NUMBER"/>
+            <column name="nombre_places_covoiturage" type="NUMBER"/>
+            <column name="insee_ville" type="NUMBER"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="parking" baseColumnNames="insee_ville"
+                referencedTableName="ville" referencedColumnNames="insee_ville"
+                constraintName="fk_parking_ville"/>
+    </changeSet>
+
+</databaseChangeLog>
