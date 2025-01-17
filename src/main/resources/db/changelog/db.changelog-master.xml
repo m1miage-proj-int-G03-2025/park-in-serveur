@@ -8,7 +8,6 @@
     <include file="db/changelog/db.changelog-ville.xml"/>
     <include file="db/changelog/db.changelog-parking.xml"/>
     <include file="db/changelog/db.changelog-place.xml"/>
-
     <include file="db/changelog/db.changelog-reservation.xml"/>
     <include file="db/changelog/db.changelog-utilisateur.xml"/>
 

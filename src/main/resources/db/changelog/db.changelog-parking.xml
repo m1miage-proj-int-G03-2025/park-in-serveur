@@ -15,17 +15,16 @@
             <column name="id_parking" type="VARCHAR2(50)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="nom" type="VARCHAR2(50)">
+            <column name="nom" type="VARCHAR2(60)">
                 <constraints nullable="false"/>
             </column>
-            <column name="adresse" type="VARCHAR2(50)"/>
-            <column name="url_site_web" type="VARCHAR2(50)"/>
+            <column name="adresse" type="VARCHAR2(100)"/>
+            <column name="url_site_web" type="VARCHAR2(200)"/>
             <column name="est_gratuit" type="BOOLEAN"/>
             <column name="hauteur_max" type="NUMBER"/>
             <column name="x_longitude" type="DOUBLE PRECISION"/>
             <column name="y_latitude" type="DOUBLE PRECISION"/>
-            <column name="id_local" type="VARCHAR2(50)"/>
-            <column name="tarif_pmr" type="NUMBER"/>
+            <column name="tarif_pmr" type="VARCHAR2(50)"/>
             <column name="tarif_1h" type="NUMBER"/>
             <column name="tarif_2h" type="NUMBER"/>
             <column name="tarif_3h" type="NUMBER"/>

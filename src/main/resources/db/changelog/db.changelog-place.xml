@@ -12,19 +12,18 @@
             </not>
         </preConditions>
         <createTable tableName="place">
-            <column name="numero_place" type="VARCHAR2(50)">
+            <column name="numero_place" type="VARCHAR2(25)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="est_occupee" type="BOOLEAN"/>
+            <column name="type_place" type="VARCHAR2(20)"/>
             <column name="id_parking" type="VARCHAR2(50)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-
         <addForeignKeyConstraint
                 baseTableName="place" baseColumnNames="id_parking"
                 referencedTableName="parking" referencedColumnNames="id_parking"
                 constraintName="fk_place_parking"/>
     </changeSet>
-
 </databaseChangeLog>
