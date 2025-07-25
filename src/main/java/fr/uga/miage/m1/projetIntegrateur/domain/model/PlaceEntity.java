@@ -17,7 +17,7 @@ public class PlaceEntity {
     private Boolean estOccupee;
 
     @ManyToOne
-    @JoinColumn(name = "idParking")
+    @JoinColumn(name = "id_parking")
     private ParkingEntity parking;
 
     @OneToMany(mappedBy = "place")

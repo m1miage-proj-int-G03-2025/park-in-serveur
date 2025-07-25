@@ -10,15 +10,14 @@ import java.util.List;
 @Table(name = "utilisateur")
 public class UtilisateurEntity {
     @Id
-    @Column(name = "id_conducteur")
+    @Column(name = "id_utilisateur")
     private String idConducteur;
-
-    @Column(name = "nom_conducteur")
+    @Column(name = "nom")
     private String nom;
-
-    @Column(name = "prenom_conducteur")
+    @Column(name = "prenom")
     private String prenom;
-
+    @Column(name = "email")
+    private String email;
     @OneToMany(mappedBy = "utilisateur")
     private List<ReservationEntity> reservations;
 }
